@@ -91,6 +91,7 @@
 }
 -(void)hidden{
     _isShowing=NO;
+    [self.superPlayer.controlView isSuspensionPlay:NO];
     [self removeFromSuperview];
     
     
@@ -110,6 +111,7 @@
     self.origFatherView = self.superPlayer.fatherView;
     if (self.origFatherView!=self) {
         self.superPlayer.fatherView=self;
+        [self.superPlayer.controlView isSuspensionPlay:YES];
     }
     UIWindow *wid=nil;
     if (@available(ios 13.0,*)) {

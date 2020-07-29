@@ -385,6 +385,9 @@
     self.repeatBtn.hidden = YES;
     self.repeatBackBtn.hidden = YES;
     [self.controlView fadeShow];
+    [self resetControlViewWithLive:self.isLive
+    shiftPlayback:NO
+        isPlaying:YES];
 }
 -(void)getThePlayIsLive{
     int liveType = [self livePlayerType];
@@ -425,7 +428,8 @@
         
 
     }
-    [self.controlView resetWithResolutionNames:nil currentResolutionIndex:0 isLive:self.isLive isTimeShifting:NO isPlaying:self.autoPlay];
+    [self resetControlViewWithLive:self.isLive shiftPlayback:NO isPlaying:self.autoPlay];
+    
     
 }
 #pragma mark - PlayerControl delegate

@@ -122,20 +122,26 @@ currentResolutionIndex:(NSUInteger)currentResolutionIndex
     self.isLive=isLive;
     if (isLive) {
         self.bottomView.hidden=YES;
+        self.fullScreenBtn.hidden=NO;
     }else{
-        self.bottomView.hidden=YES;
+        self.bottomView.hidden=NO;
+        self.fullScreenBtn.hidden=NO;
     }
     [self setPlayState:isPlaying];
 }
 -(void)isSuspensionPlay:(BOOL)isSuspension{
     if (isSuspension) {
         self.bottomView.hidden=YES;
+        self.fullScreenBtn.hidden=YES;
     }else{
+        self.fullScreenBtn.hidden=NO;
         if (self.isLive) {
-               self.bottomView.hidden=YES;
-           }else{
-               self.bottomView.hidden=YES;
-           }
+            
+            self.bottomView.hidden=YES;
+        }else{
+            self.bottomView.hidden=NO;
+            
+        }
     }
 }
 #pragma mark - 滑杆 事件
