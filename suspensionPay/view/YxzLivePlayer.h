@@ -23,6 +23,15 @@ typedef NS_ENUM(NSInteger, YxzSuperPlayerState) {
     YxzStatePause,      // 暂停播放
 };
 
+typedef NS_ENUM(NSInteger, YxzButtonAction) {
+    YxzActionNone,
+    YxzActionRetry,
+    YxzActionSwitch,
+    YxzActionIgnore,
+    YxzActionContinueReplay,
+};
+
+
 @protocol YxzPlayerDelegate <NSObject>
 @optional
 /// 返回事件
@@ -82,6 +91,8 @@ typedef NS_ENUM(NSInteger, YxzSuperPlayerState) {
 
 @property(nonatomic,strong)MMMaterialDesignSpinner *spinner;
 
+@property(nonatomic,strong)NetWatcher *netWatcher;
+@property (nonatomic) CGFloat videoRatio;
 /// 播放配置
 @property SuperPlayerViewConfig *plaConfig;
 

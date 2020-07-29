@@ -70,8 +70,14 @@
        }];
     
 }
--(void)playBtnClick:(UIButton *)but{
-    but.selected=!but.selected;
+-(void)playBtnClick:(UIButton *)sender{
+    sender.selected=!sender.selected;
+    if (sender.selected) {
+        [self.delegate controlViewPlay:self];
+    } else {
+        [self.delegate controlViewPause:self];
+    }
+    [self cancelFadeOut];
 }
 -(void)fullScreenBtnClick:(UIButton *)but{
     [self.delegate controlViewChangeScreen:self withFullScreen:YES];
@@ -88,12 +94,12 @@
     totalTime:(NSInteger)totalTime
 progressValue:(CGFloat)progress
           playableValue:(CGFloat)playable{
-    /*
+    
     if (!self.isDragging) {
         // 更新slider
         self.videoSlider.value           = progress;
-    }*/
-     self.videoSlider.value           = progress;
+    }
+     
     // 更新当前播放时间
     self.currentTimeLabel.text = [StrUtils timeFormat:currentTime];
     // 更新总时间
@@ -111,7 +117,7 @@ currentResolutionIndex:(NSUInteger)currentResolutionIndex
 
 #pragma mark - 滑杆 事件
 - (void)progressSliderTouchBegan:(UISlider *)sender {
-//    self.isDragging = YES;
+    self.isDragging = YES;
     [self cancelFadeOut];
 }
 
@@ -126,10 +132,10 @@ currentResolutionIndex:(NSUInteger)currentResolutionIndex
 }
 
 - (void)progressSliderTouchEnded:(UISlider *)sender {
-    /*
+    
     
     self.isDragging = NO;
-     */
+     
     [self.delegate controlViewSeek:self where:sender.value];
     [self fadeOut:5];
 }

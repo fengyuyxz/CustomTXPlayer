@@ -108,6 +108,9 @@
     self.hidden=NO;
     self.frame=_firstRect;
     self.origFatherView = self.superPlayer.fatherView;
+    if (self.origFatherView!=self) {
+        self.superPlayer.fatherView=self;
+    }
     UIWindow *wid=nil;
     if (@available(ios 13.0,*)) {
         wid= [[[UIApplication sharedApplication] windows] firstObject];
