@@ -31,7 +31,7 @@
     [self.bottomView addSubview:self.currentTimeLabel];
     [self.bottomView addSubview:self.totalTimeLabel];
     [self.bottomView addSubview:self.videoSlider];
-    [self.bottomView addSubview:self.fullScreenBtn];
+    [self addSubview:self.fullScreenBtn];
     [self makeSubViewsConstraints];
 }
 -(void)makeSubViewsConstraints{
@@ -54,20 +54,27 @@
     }];
    
     [self.videoSlider mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.leading.equalTo(self.startBtn.mas_trailing).offset(5);
+        make.leading.equalTo(self.currentTimeLabel.mas_trailing).offset(5);
            make.centerY.equalTo(self.currentTimeLabel.mas_centerY).offset(-1);
        }];
     [self.currentTimeLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-              make.leading.equalTo(self.videoSlider.mas_trailing);
+              make.leading.equalTo(self.startBtn.mas_trailing);
+             
               make.centerY.equalTo(self.startBtn.mas_centerY);
-              make.width.mas_equalTo(60);
+              make.width.mas_equalTo(50);
        }];
        [self.totalTimeLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-           make.trailing.equalTo(self.mas_trailing).offset(-60);
-           make.leading.equalTo(self.currentTimeLabel.mas_trailing).offset(4);
+           make.trailing.equalTo(self.mas_trailing).offset(-50);
+           make.leading.equalTo(self.videoSlider.mas_trailing).offset(4);
            make.centerY.equalTo(self.startBtn.mas_centerY);
-           make.width.mas_equalTo(60);
+           make.width.mas_equalTo(50);
        }];
+    
+    [self.fullScreenBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.right.equalTo(self.mas_right).offset(-10);
+        make.bottom.equalTo(self.mas_bottom).offset(-8);
+        make.width.height.mas_equalTo(40);
+    }];
     
 }
 -(void)playBtnClick:(UIButton *)sender{
@@ -112,9 +119,25 @@ currentResolutionIndex:(NSUInteger)currentResolutionIndex
                 isLive:(BOOL)isLive
         isTimeShifting:(BOOL)isTimeShifting
                        isPlaying:(BOOL)isPlaying{
+    self.isLive=isLive;
+    if (isLive) {
+        self.bottomView.hidden=YES;
+    }else{
+        self.bottomView.hidden=YES;
+    }
     [self setPlayState:isPlaying];
 }
-
+-(void)isSuspensionPlay:(BOOL)isSuspension{
+    if (isSuspension) {
+        self.bottomView.hidden=YES;
+    }else{
+        if (self.isLive) {
+               self.bottomView.hidden=YES;
+           }else{
+               self.bottomView.hidden=YES;
+           }
+    }
+}
 #pragma mark - 滑杆 事件
 - (void)progressSliderTouchBegan:(UISlider *)sender {
     self.isDragging = YES;

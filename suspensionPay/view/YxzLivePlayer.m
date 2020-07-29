@@ -380,13 +380,33 @@
     [self.vodPlayer setupVideoWidget:self insertIndex:0];
     self.isPauseByUser = NO;
     self.playDidEnd = NO;
-
+    [self getThePlayIsLive];
     [self startPaly];
     self.repeatBtn.hidden = YES;
     self.repeatBackBtn.hidden = YES;
     [self.controlView fadeShow];
 }
-
+-(void)getThePlayIsLive{
+    int liveType = [self livePlayerType];
+    if (liveType >= 0) {
+        self.isLive = YES;
+    } else {
+        self.isLive = NO;
+    }
+}
+- (int)livePlayerType {
+    int playType = -1;
+    NSString *videoURL = self.playerModel.playingDefinitionUrl;
+    NSURLComponents *components = [NSURLComponents componentsWithString:videoURL];
+    NSString *scheme = [[components scheme] lowercaseString];
+    if ([scheme isEqualToString:@"rtmp"]) {
+        playType = PLAY_TYPE_LIVE_RTMP;
+    } else if ([scheme hasPrefix:@"http"]
+               && [[components path].lowercaseString hasSuffix:@".flv"]) {
+        playType = PLAY_TYPE_LIVE_FLV;
+    }
+    return playType;
+}
 - (void)_removeOldPlayer
 {
     for (UIView *w in [self subviews]) {
@@ -421,7 +441,9 @@
 }
 /** 播放器全屏 */
 - (void)controlViewChangeScreen:(UIView *)controlView withFullScreen:(BOOL)isFullScreen{
-    
+    if ([self.delegate respondsToSelector:@selector(controlViewChangeScreen:withFullScreen:)]) {
+        [self.delegate controlViewChangeScreen:controlView withFullScreen:isFullScreen];
+    }
 }
 - (void)controlViewSeek:(SuperPlayerControlView *)controlView where:(CGFloat)pos {
     CGFloat dragedSeconds = [self sliderPosToTime:pos];

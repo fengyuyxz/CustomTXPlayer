@@ -63,6 +63,8 @@
 
 /// 是否在拖动进度
 @property BOOL  isDragging;
+@property(nonatomic,assign)BOOL isLive;
+
 
 //设置播放进度事件
 - (void)setProgressTime:(NSInteger)currentTime

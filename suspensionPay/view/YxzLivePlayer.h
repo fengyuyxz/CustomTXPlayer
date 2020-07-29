@@ -34,6 +34,10 @@ typedef NS_ENUM(NSInteger, YxzButtonAction) {
 
 @protocol YxzPlayerDelegate <NSObject>
 @optional
+
+/** 播放器全屏 */
+- (void)controlViewChangeScreen:(UIView *)controlView withFullScreen:(BOOL)isFullScreen;
+
 /// 返回事件
 - (void)superPlayerBackAction:(YxzLivePlayer *)player;
 /// 全屏改变通知
