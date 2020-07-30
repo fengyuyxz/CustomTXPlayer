@@ -445,10 +445,18 @@
 }
 /** 播放器全屏 */
 - (void)controlViewChangeScreen:(UIView *)controlView withFullScreen:(BOOL)isFullScreen{
+    [self endEditing:NO];
     if ([self.delegate respondsToSelector:@selector(controlViewChangeScreen:withFullScreen:)]) {
         [self.delegate controlViewChangeScreen:controlView withFullScreen:isFullScreen];
     }
 }
+
+
+
+
+
+
+
 - (void)controlViewSeek:(SuperPlayerControlView *)controlView where:(CGFloat)pos {
     CGFloat dragedSeconds = [self sliderPosToTime:pos];
     NSLog(@"pos ==  %f",pos);

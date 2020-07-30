@@ -59,6 +59,8 @@ typedef NS_ENUM(NSInteger, YxzButtonAction) {
 /** 进入后台*/
 @property (nonatomic, assign) BOOL                   didEnterBackground;
 @property (nonatomic, assign) BOOL                   playDidEnd;
+
+
 /// 是否是直播流
 @property (readonly) BOOL isLive;
 @property(nonatomic) BOOL  isLoaded;

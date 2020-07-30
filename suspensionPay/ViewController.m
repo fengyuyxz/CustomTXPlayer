@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-#import "SecondeViewController.h"
+#import "ThiredVC.h"
 @interface ViewController ()
 
 @end
@@ -19,7 +19,7 @@
     // Do any additional setup after loading the view.
 }
 - (IBAction)push:(id)sender {
-    SecondeViewController *vc=[[SecondeViewController alloc]initWithNibName:@"SecondeViewController" bundle:nil];
+    ThiredVC *vc=[[ThiredVC alloc]initWithNibName:@"ThiredVC" bundle:nil];
     [self.navigationController pushViewController:vc animated:YES];
 }
 

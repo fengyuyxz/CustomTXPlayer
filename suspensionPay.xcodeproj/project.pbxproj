@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		1C2CBE7524CEC4060079BFD1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C2CBE7424CEC4060079BFD1 /* AppDelegate.m */; };
-		1C2CBE7824CEC4060079BFD1 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C2CBE7724CEC4060079BFD1 /* SceneDelegate.m */; };
 		1C2CBE7B24CEC4060079BFD1 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C2CBE7A24CEC4060079BFD1 /* ViewController.m */; };
 		1C2CBE7E24CEC4060079BFD1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C2CBE7C24CEC4060079BFD1 /* Main.storyboard */; };
 		1C2CBE8024CEC4060079BFD1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C2CBE7F24CEC4060079BFD1 /* Assets.xcassets */; };
@@ -21,6 +20,8 @@
 		1C2CBEC224D10B050079BFD1 /* YxzLivePlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C2CBEC124D10B050079BFD1 /* YxzLivePlayer.m */; };
 		1C2CBEC524D1137D0079BFD1 /* YxzLivePlayerControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C2CBEC424D1137D0079BFD1 /* YxzLivePlayerControlView.m */; };
 		1C2CBECA24D126F80079BFD1 /* YxzPlayerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C2CBEC924D126F80079BFD1 /* YxzPlayerModel.m */; };
+		1C2CBECE24D255080079BFD1 /* ThiredVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C2CBECC24D255080079BFD1 /* ThiredVC.m */; };
+		1C2CBECF24D255080079BFD1 /* ThiredVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C2CBECD24D255080079BFD1 /* ThiredVC.xib */; };
 		D199C417675270F863AC46FA /* libPods-suspensionPay.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 569A060D95882DCFA4045676 /* libPods-suspensionPay.a */; };
 /* End PBXBuildFile section */
 
@@ -28,8 +29,6 @@
 		1C2CBE7024CEC4060079BFD1 /* suspensionPay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = suspensionPay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C2CBE7324CEC4060079BFD1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		1C2CBE7424CEC4060079BFD1 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		1C2CBE7624CEC4060079BFD1 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
-		1C2CBE7724CEC4060079BFD1 /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
 		1C2CBE7924CEC4060079BFD1 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		1C2CBE7A24CEC4060079BFD1 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		1C2CBE7D24CEC4060079BFD1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -50,6 +49,9 @@
 		1C2CBEC624D116460079BFD1 /* YXZConstant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YXZConstant.h; sourceTree = "<group>"; };
 		1C2CBEC824D126F80079BFD1 /* YxzPlayerModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YxzPlayerModel.h; sourceTree = "<group>"; };
 		1C2CBEC924D126F80079BFD1 /* YxzPlayerModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YxzPlayerModel.m; sourceTree = "<group>"; };
+		1C2CBECB24D255080079BFD1 /* ThiredVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThiredVC.h; sourceTree = "<group>"; };
+		1C2CBECC24D255080079BFD1 /* ThiredVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThiredVC.m; sourceTree = "<group>"; };
+		1C2CBECD24D255080079BFD1 /* ThiredVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ThiredVC.xib; sourceTree = "<group>"; };
 		4580995FC2EEE08088F85D99 /* Pods-suspensionPay.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-suspensionPay.debug.xcconfig"; path = "Target Support Files/Pods-suspensionPay/Pods-suspensionPay.debug.xcconfig"; sourceTree = "<group>"; };
 		569A060D95882DCFA4045676 /* libPods-suspensionPay.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-suspensionPay.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC767E713032DD46752B2CC9 /* Pods-suspensionPay.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-suspensionPay.release.xcconfig"; path = "Target Support Files/Pods-suspensionPay/Pods-suspensionPay.release.xcconfig"; sourceTree = "<group>"; };
@@ -101,13 +103,14 @@
 				1C2CBE8F24CEC9F50079BFD1 /* view */,
 				1C2CBE7324CEC4060079BFD1 /* AppDelegate.h */,
 				1C2CBE7424CEC4060079BFD1 /* AppDelegate.m */,
-				1C2CBE7624CEC4060079BFD1 /* SceneDelegate.h */,
-				1C2CBE7724CEC4060079BFD1 /* SceneDelegate.m */,
 				1C2CBE7924CEC4060079BFD1 /* ViewController.h */,
 				1C2CBE7A24CEC4060079BFD1 /* ViewController.m */,
 				1C2CBE9324CECD180079BFD1 /* SecondeViewController.h */,
 				1C2CBE9424CECD180079BFD1 /* SecondeViewController.m */,
 				1C2CBE9524CECD180079BFD1 /* SecondeViewController.xib */,
+				1C2CBECB24D255080079BFD1 /* ThiredVC.h */,
+				1C2CBECC24D255080079BFD1 /* ThiredVC.m */,
+				1C2CBECD24D255080079BFD1 /* ThiredVC.xib */,
 				1C2CBE7C24CEC4060079BFD1 /* Main.storyboard */,
 				1C2CBE7F24CEC4060079BFD1 /* Assets.xcassets */,
 				1C2CBE8124CEC4060079BFD1 /* LaunchScreen.storyboard */,
@@ -218,6 +221,7 @@
 			files = (
 				1C2CBE8324CEC4060079BFD1 /* LaunchScreen.storyboard in Resources */,
 				1C2CBE8024CEC4060079BFD1 /* Assets.xcassets in Resources */,
+				1C2CBECF24D255080079BFD1 /* ThiredVC.xib in Resources */,
 				1C2CBE9724CECD180079BFD1 /* SecondeViewController.xib in Resources */,
 				1C2CBEBF24D05B140079BFD1 /* YxzPlayer.bundle in Resources */,
 				1C2CBE7E24CEC4060079BFD1 /* Main.storyboard in Resources */,
@@ -276,10 +280,10 @@
 				1C2CBEAF24D00C830079BFD1 /* SuspensionWindow.m in Sources */,
 				1C2CBEC524D1137D0079BFD1 /* YxzLivePlayerControlView.m in Sources */,
 				1C2CBE9624CECD180079BFD1 /* SecondeViewController.m in Sources */,
+				1C2CBECE24D255080079BFD1 /* ThiredVC.m in Sources */,
 				1C2CBE7B24CEC4060079BFD1 /* ViewController.m in Sources */,
 				1C2CBE7524CEC4060079BFD1 /* AppDelegate.m in Sources */,
 				1C2CBE8624CEC4060079BFD1 /* main.m in Sources */,
-				1C2CBE7824CEC4060079BFD1 /* SceneDelegate.m in Sources */,
 				1C2CBECA24D126F80079BFD1 /* YxzPlayerModel.m in Sources */,
 				1C2CBEC224D10B050079BFD1 /* YxzLivePlayer.m in Sources */,
 			);
