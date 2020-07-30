@@ -10,7 +10,7 @@
 #import "SuspensionWindow.h"
 #import "YxzLivePlayer.h"
 #import <Masonry/Masonry.h>
-@interface SecondeViewController ()<YxzPlayerDelegate>
+@interface SecondeViewController ()<YxzPlayerDelegate,YxzLiveRoomControlDelegate>
 
 @property(nonatomic,strong)UIView *videoContainerView;
 @property(nonatomic,strong)UITextField *textField;
@@ -62,6 +62,14 @@
     self.livePlayer.fatherView=self.videoContainerView;
     [self startPlayer];
 }
+
+-(void)suspensionClick{
+    
+}
+-(void)moreInfoClick{
+    
+}
+
 -(void)onDeviceOrientationChange{
     [self adjustTransform];
 }
@@ -184,6 +192,7 @@ return (interfaceOrientation == UIInterfaceOrientationLandscapeLeft || interface
 -(YxzLivePlayer *)livePlayer{
     if (!_livePlayer) {
         _livePlayer=[[YxzLivePlayer alloc]init];
+        _livePlayer.roomControlDelegate=self;
     }
     return _livePlayer;
 }
