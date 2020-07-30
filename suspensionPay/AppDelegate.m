@@ -22,6 +22,7 @@
 
 
 #pragma mark - InterfaceOrientation //应用支持的方向
+
 - (UIInterfaceOrientationMask)application:(UIApplication *)application supportedInterfaceOrientationsForWindow:(UIWindow *)window {
     return UIInterfaceOrientationMaskAllButUpsideDown;
 }
