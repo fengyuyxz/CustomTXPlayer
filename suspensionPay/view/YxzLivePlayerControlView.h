@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <SuperPlayer/PlayerSlider.h>
 #import <SuperPlayer/UIView+Fade.h>
+#import "YxzLiveRoomControlDelegate.h"
 @class YxzLivePlayerControlView;
 @protocol YxzPlayerControlViewDelegate <NSObject>
 
@@ -44,6 +45,8 @@
 
 @property(nonatomic,weak)id<YxzPlayerControlViewDelegate> delegate;
 
+@property(nonatomic,weak)id<YxzLiveRoomControlDelegate> roomControlDelegate;
+
 @property(nonatomic,strong)UIView *topView;
 @property(nonatomic,strong)UIView *bottomView;
 /**中间播放按钮*/
@@ -57,6 +60,10 @@
 
 /** 全屏按钮 */
 @property (nonatomic, strong) UIButton                *fullScreenBtn;
+/** 跟多选择 */
+@property(nonatomic,strong)UIButton *moreBut;
+/** 小窗按钮 */
+@property(nonatomic,strong)UIButton *suspensionBut;
 
 /** 滑杆 */
 @property (nonatomic, strong) PlayerSlider   *videoSlider;

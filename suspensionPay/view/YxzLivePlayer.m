@@ -722,6 +722,7 @@
     if (!_controlView) {
         _controlView=[[YxzLivePlayerControlView alloc]init];
         _controlView.delegate=self;
+        _controlView.roomControlDelegate=self.roomControlDelegate;
     }
     return _controlView;
 }

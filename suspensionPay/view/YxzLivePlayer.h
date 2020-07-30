@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "YxzPlayerModel.h"
 #import "YxzLivePlayerControlView.h"
+#import "YxzLiveRoomControlDelegate.h"
 #import <SuperPlayer/MMMaterialDesignSpinner.h>
 #import <SuperPlayer/SuperPlayerViewConfig.h>
 #import <SuperPlayer/NetWatcher.h>
@@ -53,6 +54,8 @@ typedef NS_ENUM(NSInteger, YxzButtonAction) {
 
 @interface YxzLivePlayer : UIView
 
+
+@property(nonatomic,weak)id<YxzLiveRoomControlDelegate> roomControlDelegate;
 
 @property(nonatomic,weak)id<YxzPlayerDelegate> delegate;
 

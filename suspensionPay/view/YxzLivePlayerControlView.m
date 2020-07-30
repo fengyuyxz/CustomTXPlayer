@@ -25,6 +25,10 @@
     self.backgroundColor=[UIColor clearColor];
     [self addSubview:self.topView];
     [self addSubview:self.bottomView];
+    
+    [self.topView addSubview:self.moreBut];
+    [self.topView addSubview:self.suspensionBut];
+    
 //    [self addSubview:self.centerPlayBtn];
     
     [self.bottomView addSubview:self.startBtn];
@@ -47,6 +51,18 @@
 //        make.center.equalTo(self);
 //        make.width.height.equalTo(@(50));
 //    }];
+    
+    [self.suspensionBut mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.bottom.equalTo(self.topView.mas_bottom);
+        make.right.equalTo(self.topView.mas_right).offset(-10);
+        make.width.height.mas_equalTo(30);
+    }];
+    [self.moreBut mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.bottom.equalTo(self.topView.mas_bottom);
+        make.right.equalTo(self.suspensionBut.mas_left).offset(-10);
+        make.width.height.mas_equalTo(30);
+    }];
+    
     [self.startBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.leading.equalTo(self.bottomView.mas_leading).offset(5);
         make.top.equalTo(self.bottomView.mas_top).offset(10);
@@ -87,6 +103,7 @@
     [self cancelFadeOut];
 }
 -(void)fullScreenBtnClick:(UIButton *)but{
+    but.selected=!but.selected;
     [self.delegate controlViewChangeScreen:self withFullScreen:YES];
     [self fadeOut:3];
 }
@@ -144,7 +161,18 @@ currentResolutionIndex:(NSUInteger)currentResolutionIndex
         }
     }
 }
-#pragma mark - 滑杆 事件
+#pragma mark - 更多 ========
+-(void)moreBtuPressed:(UIButton *)but{
+    if ([self.roomControlDelegate respondsToSelector:@selector(moreInfoClick)]) {
+        [self.roomControlDelegate moreInfoClick];
+    }
+}
+-(void)suspensionButPressed:(UIButton *)but{
+    if ([self.roomControlDelegate respondsToSelector:@selector(suspensionClick)]) {
+        [self.roomControlDelegate suspensionClick];
+    }
+}
+#pragma mark - 滑杆 事件 ==============
 - (void)progressSliderTouchBegan:(UISlider *)sender {
     self.isDragging = YES;
     [self cancelFadeOut];
@@ -238,11 +266,29 @@ currentResolutionIndex:(NSUInteger)currentResolutionIndex
     if (!_fullScreenBtn) {
         _fullScreenBtn = [UIButton buttonWithType:UIButtonTypeCustom];
         [_fullScreenBtn setImage:YxzSuperPlayerImage(@"fullscreen") forState:UIControlStateNormal];
+        [_fullScreenBtn setImage:YxzSuperPlayerImage(@"wb_fullscreen_back") forState:UIControlStateSelected];
         [_fullScreenBtn addTarget:self action:@selector(fullScreenBtnClick:) forControlEvents:UIControlEventTouchUpInside];
     }
     return _fullScreenBtn;
 }
+-(UIButton *)moreBut{
+    if (!_moreBut) {
+        _moreBut=[self getBut];
+        [_moreBut setImage:YxzSuperPlayerImage(@"more_pressed") forState:UIControlStateNormal];
+        [_moreBut addTarget:self action:@selector(moreBtuPressed:) forControlEvents:UIControlEventTouchUpInside];
+    }
+    return _moreBut;
+}
+-(UIButton *)suspensionBut{
+    if (!_suspensionBut) {
+        _suspensionBut=[self getBut];
+        [_suspensionBut setImage:YxzSuperPlayerImage(@"back_full") forState:UIControlStateNormal];
+        [_suspensionBut addTarget:self action:@selector(suspensionButPressed:) forControlEvents:UIControlEventTouchUpInside];
+    }
+    return _suspensionBut;
+}
 -(UIButton *)getBut{
     return [UIButton buttonWithType:UIButtonTypeCustom];
 }
+
 @end

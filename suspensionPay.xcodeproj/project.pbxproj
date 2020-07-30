@@ -52,6 +52,7 @@
 		1C2CBECB24D255080079BFD1 /* ThiredVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThiredVC.h; sourceTree = "<group>"; };
 		1C2CBECC24D255080079BFD1 /* ThiredVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThiredVC.m; sourceTree = "<group>"; };
 		1C2CBECD24D255080079BFD1 /* ThiredVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ThiredVC.xib; sourceTree = "<group>"; };
+		1C2CBEDC24D28FE10079BFD1 /* YxzLiveRoomControlDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YxzLiveRoomControlDelegate.h; sourceTree = "<group>"; };
 		4580995FC2EEE08088F85D99 /* Pods-suspensionPay.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-suspensionPay.debug.xcconfig"; path = "Target Support Files/Pods-suspensionPay/Pods-suspensionPay.debug.xcconfig"; sourceTree = "<group>"; };
 		569A060D95882DCFA4045676 /* libPods-suspensionPay.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-suspensionPay.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC767E713032DD46752B2CC9 /* Pods-suspensionPay.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-suspensionPay.release.xcconfig"; path = "Target Support Files/Pods-suspensionPay/Pods-suspensionPay.release.xcconfig"; sourceTree = "<group>"; };
@@ -129,6 +130,7 @@
 				1C2CBEC124D10B050079BFD1 /* YxzLivePlayer.m */,
 				1C2CBEC324D1137D0079BFD1 /* YxzLivePlayerControlView.h */,
 				1C2CBEC424D1137D0079BFD1 /* YxzLivePlayerControlView.m */,
+				1C2CBEDC24D28FE10079BFD1 /* YxzLiveRoomControlDelegate.h */,
 				1C2CBEC624D116460079BFD1 /* YXZConstant.h */,
 			);
 			path = view;
